@@ -3,7 +3,7 @@ import fitz # PyMuPDF kütüphanesi
 import re
 import os # Dosya kontrolü için
 import random # Soruları karıştırmak için
-import time # time.sleep()
+
 
 # Dosya yolları doğrudan burada belirtiliyor, kullanıcı yüklemeyecek.
 # Artık PDF dosyalarını kullanıyoruz
@@ -431,7 +431,6 @@ def main():
         if not st.session_state.exam_mode_active and not st.session_state.review_exam_incorrect_active:
             if st.session_state.feedback_trigger == 'correct':
                 feedback_message_area.success("✅ Doğru cevap!")
-                time.sleep(0.2)
                 if st.session_state.index < question_count - 1:
                     st.session_state.index += 1
                     st.session_state.feedback_trigger = None 
